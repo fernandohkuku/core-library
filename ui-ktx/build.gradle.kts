@@ -14,6 +14,18 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+
+    buildTypes {
+        release {
+            isMinifyEnabled = false
+        }
+        debug {
+
+        }
+        create("qa") {
+
+        }
+    }
 }
 
 dependencies {

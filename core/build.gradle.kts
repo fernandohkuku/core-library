@@ -20,6 +20,12 @@ android {
         release {
             isMinifyEnabled = false
         }
+        debug {
+
+        }
+        create("qa") {
+
+        }
     }
 
     kotlinOptions {
