@@ -1,0 +1,82 @@
+{
+  "serviceId" : "62e041fc199c2d000765c8f2",
+  "stagingLocation" : "/logprocessor/staging",
+
+  "localLogPath" : "/Log",
+
+  "backupDirectory" : "/logprocessor/backup",
+
+  "thirdPartyLocations":[
+    {
+      "application" : "softphone",
+      "location" : "/ipblue/softphone/",
+      "files" : "(.*)Phonelog.txt.archive(.*)"
+    },
+    {
+      "application" : "softphone",
+      "location" : "/Softphone/",
+      "files" : "(.*)Phonelog.txt.archive(.*)"
+    },
+    {
+      "application" : "walkie",
+      "location" : "/ipblue/ptt/",
+      "files" : "(.*)WTlog.txt.archive(.*)"
+    },
+    {
+      "application" : "walkie",
+      "location" : "/Softphone/",
+      "files" : "(.*)WTlog.txt.archive(.*)"
+    },
+    {
+      "application" : "rxlogger.resources",
+      "location" : "/RxLogger/",
+      "files" : "(.*)Resource(.*)_+([1-9]|[0-9][0-9])+\\.csv",
+      "extractor" : "rxloggercsv"
+    },
+    {
+      "application" : "rxlogger.snapshots",
+      "location" : "/RxLogger/snapshots/",
+      "files" : "(.*)snapshot(.*)\\.txt"
+    },
+    {
+      "application" : "rxlogger.system",
+      "location" : "/RxLogger/",
+      "files" : "(.*)System+([1-9]|[0-9][0-9])+\\.txt"
+    }
+  ],
+
+  "maxPostSizeKB" : 5000,
+
+  "processingInterval" : 3600,
+
+  "logServiceURL"  :  "https://logs.io.homedepot.com/api/v2/json",
+
+  "logServiceBatchURL"  :  "https://logs.io.homedepot.com/api/v2/json",
+
+  "logServiceConnectionTimeout" : 60,
+
+  "transferRetry" : 3,
+
+  "transferRetrySleepInterval" : 300,
+
+  "ignoreLogsOlderThan" : 7,
+
+  "maxStagingDirectorySize" : 400000,
+
+  "zipDaysToKeep" : 7,
+  "maxBackupDirectorySizeMB" : 200,
+
+  "eventLoggingConfiguration" : {
+    "logLevel" : "ERROR",
+    "activeLogBaseName" : "/Log/com.homedepot.sa.xp.logprocessor/active.log",
+    "maxLogFilesArchived" : 20,
+    "maxLogSizeKb" : 10,
+    "healthKeysEnabled" : true,
+    "applicationKeysEnabled" : true,
+    "standardKeysEnabled" : true,
+    "memoryKeysEnabled" : true,
+    "performanceKeysEnabled" : true,
+    "remoteLoggingEnabled": true,
+    "localLoggingEnabled": false
+  }
+}

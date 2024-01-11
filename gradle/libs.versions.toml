@@ -1,0 +1,116 @@
+[versions]
+#Android Application
+accompanist-flowlayout = "0.24.8-beta"
+accompanist-systemuicontroller = "0.30.1"
+android-application = "8.2.0"
+#Android Library
+android-library = "8.2.0"
+#Kotlin
+#noinspection GradleDependency
+datastore-preferences = "1.0.0"
+kotlin-android = "1.9.0"
+#ksp
+kotlinx-coroutines-test = "1.7.3"
+ksp = "1.9.20-1.0.14"
+#Android Core
+core-ktx = "1.12.0"
+lifecycle-runtime-ktx = "2.6.2"
+#Splash Screen
+core-splashscreen = "1.0.1"
+#Compose
+activity-compose = "1.8.2"
+lifecycle-runtime-compose = "2.6.2"
+compose-bom = "2023.10.01"
+#Room
+material3-window-size = "1.2.0-beta01"
+mockito-android = "3.3.3"
+mockito-core = "3.11.2"
+mockito-inline = "3.11.2"
+mockito-kotlin = "2.2.0"
+mockk = "1.10.0"
+room-compiler = "2.6.1"
+room-ktx = "2.6.1"
+room-runtime = "2.6.1"
+#Dagger Hilt
+hilt-navigation-compose = "1.1.0"
+hilt-android = "2.48.1"
+#Moshi
+moshi = "1.15.0"
+#Retrofit
+retrofit-moshi-converter = "2.9.0"
+#Ktlint
+ktlint= "12.0.3"
+#Junit
+junit = "4.13.2"
+ext-junit = "1.1.5"
+#espresso
+espresso-core = "3.5.1"
+appcompat = "1.6.1"
+material = "1.11.0"
+
+
+
+[libraries]
+#Android Core
+accompanist-flowlayout = { module = "com.google.accompanist:accompanist-flowlayout", version.ref = "accompanist-flowlayout" }
+accompanist-systemuicontroller = { module = "com.google.accompanist:accompanist-systemuicontroller", version.ref = "accompanist-systemuicontroller" }
+androidx-core-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "core-splashscreen" }
+androidx-corektx  = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
+androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastore-preferences" }
+androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle-runtime-ktx" }
+#Compose
+androidx-compose-activity = { module = "androidx.activity:activity-compose", version.ref = "activity-compose" }
+androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle-runtime-compose" }
+androidx-compose-bom = { module = "androidx.compose:compose-bom", version.ref = "compose-bom" }
+androidx-compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
+androidx-compose-material3 = { module = "androidx.compose.material3:material3" }
+androidx-compose-ui-graphics = { module = "androidx.compose.ui:ui-graphics" }
+androidx-compose-ui = { module = "androidx.compose.ui:ui" }
+#Room
+androidx-material3-window-size = { module = "androidx.compose.material3:material3-window-size-class", version.ref = "material3-window-size" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room-compiler" }
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "room-ktx" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "room-runtime" }
+#Dagger Hilt
+androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hilt-navigation-compose" }
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt-android" }
+hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt-android" }
+#Moshi
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinx-coroutines-test" }
+mockito-android = { module = "org.mockito:mockito-android", version.ref = "mockito-android" }
+mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockito-core" }
+mockito-inline = { module = "org.mockito:mockito-inline", version.ref = "mockito-inline" }
+mockito-kotlin = { module = "com.nhaarman.mockitokotlin2:mockito-kotlin", version.ref = "mockito-kotlin" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+moshi-kotlin-codegen = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshi" }
+moshi-kotlin = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshi" }
+moshi = { module = "com.squareup.moshi:moshi", version.ref = "moshi" }
+#Retrofit
+retrofit2-converter-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofit-moshi-converter" }
+#Junit Test
+junit = { module = "junit:junit", version.ref = "junit" }
+androidx-test-ext-junit = { module = "androidx.test.ext:junit", version.ref = "ext-junit" }
+androidx-compose-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4" }
+#espresso Test
+androidx-test-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso-core" }
+#Compose Test
+androidx-compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
+androidx-compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+
+[bundles]
+compose = [
+    "androidx-compose-ui",
+    "androidx-compose-ui-graphics",
+    "androidx-compose-ui-tooling-preview",
+    "androidx-compose-material3"
+]
+[plugins]
+com-android-application = { id = "com.android.application", version.ref = "android-application" }
+org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin-android" }
+com-android-library = { id = "com.android.library", version.ref = "android-library" }
+com-google-devtools-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+com-google-dagger-hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt-android" }
+org-jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin-android" }
+org-jlleitschuh-gradle-ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref ="ktlint" }
