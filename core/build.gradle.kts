@@ -21,6 +21,10 @@ android {
             isMinifyEnabled = false
         }
     }
+
+    kotlinOptions {
+        jvmTarget = "17"
+    }
 }
 
 
@@ -28,14 +32,6 @@ dependencies {
     implementation(projects.uiKtx)
     //Data Store
     api(libs.androidx.datastore.preferences)
-    //Dagger hilt compiler
-
-    // Moshi
-    api(libs.moshi)
-    api(libs.moshi.kotlin)
-    // Retrofit/
-    api(libs.retrofit2.converter.moshi)
-    //Hilt
     ksp(libs.hilt.android.compiler)
     ksp(libs.moshi.kotlin.codegen)
 }
