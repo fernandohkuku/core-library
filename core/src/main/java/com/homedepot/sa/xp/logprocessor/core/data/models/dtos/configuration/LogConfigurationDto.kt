@@ -1,6 +1,6 @@
 package com.homedepot.sa.xp.logprocessor.core.data.models.dtos.configuration
 
-data class LogConfigurationDto(
+ data class LogConfigurationDto(
     val serviceId: String,
     val stagingLocation: String,
     val localLogPath: String,

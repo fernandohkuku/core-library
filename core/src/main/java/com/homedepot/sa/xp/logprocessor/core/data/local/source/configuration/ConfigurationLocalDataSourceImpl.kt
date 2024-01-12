@@ -6,8 +6,8 @@ import com.homedepot.sa.xp.logprocessor.core.data.models.dtos.configuration.File
 import com.homedepot.sa.xp.logprocessor.core.data.models.dtos.configuration.LogConfigurationDto
 import com.homedepot.sa.xp.logprocessor.core.data.models.dtos.configuration.PlatformConfigurationDto
 import com.homedepot.sa.xp.logprocessor.core.data.repositories.ConfigurationLocalDataSource
-import com.homedepot.sa.xp.logprocessor.core.di.LOG_PROCESSOR_CONFIG
-import com.homedepot.sa.xp.logprocessor.core.di.PLATFORM_CONFIG
+import com.homedepot.sa.xp.logprocessor.core.di.hilt.LOG_PROCESSOR_CONFIG
+import com.homedepot.sa.xp.logprocessor.core.di.hilt.PLATFORM_CONFIG
 import com.homedepot.sa.xp.logprocessor.core.domain.exceptions.configuration.PlatformConfigurationNotFoundException
 import com.homedepot.sa.xp.logprocessor.ui_ktx.inputstream.saveFile
 import com.squareup.moshi.JsonAdapter

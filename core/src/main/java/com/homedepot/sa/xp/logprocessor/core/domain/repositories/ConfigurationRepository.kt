@@ -6,7 +6,7 @@ import com.homedepot.sa.xp.logprocessor.core.data.models.dtos.configuration.Plat
 import okhttp3.ResponseBody
 
 
-interface ConfigurationRepository {
+ interface ConfigurationRepository {
     suspend fun getPlatformConfiguration(): PlatformConfigurationDto?
     suspend fun getLogConfiguration(): LogConfigurationDto?
     suspend fun getLogConfigurationDefault(): LogConfigurationDto?

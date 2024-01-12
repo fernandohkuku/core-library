@@ -6,7 +6,7 @@ plugins {
     alias(libs.plugins.org.jetbrains.kotlin.android)
     alias(libs.plugins.com.google.devtools.ksp)
     alias(libs.plugins.com.google.dagger.hilt.android)
-    id("maven-publish")
+    `maven-publish`
 }
 
 android {
@@ -19,6 +19,10 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
         debug {
 
@@ -27,7 +31,6 @@ android {
 
         }
     }
-
     kotlinOptions {
         jvmTarget = "17"
     }
@@ -47,7 +50,6 @@ afterEvaluate {
         publications {
             create<MavenPublication>("release") {
                 from(components["release"])
-
                 groupId = "com.github.fernandohkuku"
                 artifactId = "core-preview-test"
                 version = "1.0"

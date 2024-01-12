@@ -4,7 +4,7 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class PlatformConfigurationDto(
+ data class PlatformConfigurationDto(
     @get:Json(name = "adminModeEnabled")
     val adminModeEnabled: Boolean,
     @get:Json(name = "maxLocalLogFiles")

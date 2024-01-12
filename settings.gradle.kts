@@ -18,3 +18,4 @@ rootProject.name = "FP_LogProcessor"
 include(":app")
 include(":ui-ktx")
 include(":core")
+include(":logs")

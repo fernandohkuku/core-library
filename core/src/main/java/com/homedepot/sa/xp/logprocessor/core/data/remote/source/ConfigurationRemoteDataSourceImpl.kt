@@ -5,7 +5,7 @@ import com.homedepot.sa.xp.logprocessor.core.data.repositories.ConfigurationRemo
 import okhttp3.ResponseBody
 import javax.inject.Inject
 
-class ConfigurationRemoteDataSourceImpl @Inject constructor(
+internal class ConfigurationRemoteDataSourceImpl @Inject constructor(
     private val configurationService: ConfiguratorService
 ) : ConfigurationRemoteDataSource {
     override suspend fun downloadConfiguration(): ResponseBody {

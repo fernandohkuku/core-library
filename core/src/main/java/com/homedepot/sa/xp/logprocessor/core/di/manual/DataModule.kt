@@ -10,7 +10,7 @@ internal class DataModule(
     private val configurationRemoteDataSource: ConfigurationRemoteDataSource
 ) {
 
-    val configurationManager: ConfigurationRepository by lazy {
+    internal val configurationManager: ConfigurationRepository by lazy {
         ConfigurationRepositoryImpl(
             localDataSource = configurationLocalDataSource,
             remoteDataSource = configurationRemoteDataSource

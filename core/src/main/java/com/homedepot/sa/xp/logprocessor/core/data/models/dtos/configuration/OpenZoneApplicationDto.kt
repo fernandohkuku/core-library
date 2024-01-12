@@ -14,9 +14,9 @@ data class OpenZoneApplicationDto(
     @get:Json(name = "appPath")
     val appPath: String,
     @get:Json(name = "iconIndex")
-    val iconIndex : Int,
+    val iconIndex: Int,
     @get:Json(name = "pinApplication")
     val pinApplication: Boolean,
     @get:Json(name = "activationSysParm")
-    val activationSysParm : ActivationSysParmDto
+    val activationSysParm: ActivationSysParmDto
 )

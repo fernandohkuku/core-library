@@ -1,4 +1,4 @@
-package com.homedepot.sa.xp.logprocessor.core.di
+package com.homedepot.sa.xp.logprocessor.core.di.hilt
 
 import android.os.Environment
 import com.homedepot.sa.xp.logprocessor.core.data.local.source.configuration.ConfigurationLocalDataSourceImpl.Companion.LAUNCHER_FILE

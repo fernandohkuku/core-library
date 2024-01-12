@@ -1,17 +1,11 @@
 package com.homedepot.sa.xp.logprocessor.core.di.manual
 
 import android.content.Context
-import android.content.res.Configuration
-import com.homedepot.sa.xp.logprocessor.core.data.remote.api.configurator.ConfiguratorService
-import com.homedepot.sa.xp.logprocessor.core.data.remote.source.ConfigurationRemoteDataSourceImpl
-import com.homedepot.sa.xp.logprocessor.core.data.repositories.ConfigurationRemoteDataSource
 import com.homedepot.sa.xp.logprocessor.core.domain.repositories.ConfigurationRepository
-
 
 interface AppModule {
     val configurationManager: ConfigurationRepository
 }
-
 
 class AppModuleImpl(
     private val context: Context

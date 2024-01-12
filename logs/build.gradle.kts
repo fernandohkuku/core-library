@@ -1,24 +1,28 @@
+@Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
     alias(libs.plugins.com.android.library)
     alias(libs.plugins.org.jetbrains.kotlin.android)
+    alias(libs.plugins.com.google.devtools.ksp)
     `maven-publish`
 }
 
 android {
-    namespace = "com.homedepot.sa.xp.logprocessor.ui_ktx"
+    namespace = "com.homedepot.sa.xp.logprocessor.logs"
+    compileSdk = 34
 
     defaultConfig {
+        minSdk = 24
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
-
-    kotlinOptions {
-        jvmTarget = "17"
-    }
-
     buildTypes {
         release {
             isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
         debug {
 
@@ -27,10 +31,13 @@ android {
 
         }
     }
+    kotlinOptions {
+        jvmTarget = "17"
+    }
 }
 
 dependencies {
-
+    implementation(projects.core)
 }
 
 afterEvaluate {
@@ -39,8 +46,9 @@ afterEvaluate {
             create<MavenPublication>("release") {
                 from(components["release"])
                 groupId = "com.github.fernandohkuku"
-                artifactId = "ui-ktx-preview-test"
+                artifactId = "log-processor"
                 version = "1.0"
+
             }
         }
     }
