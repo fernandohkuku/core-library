@@ -3,9 +3,12 @@ package com.homedepot.sa.xp.logprocessor.logs
 import android.app.Activity
 import android.content.Context
 import android.util.Log
+import androidx.compose.runtime.Composable
 import com.homedepot.sa.xp.logprocessor.core.di.manual.AppModule
 import com.homedepot.sa.xp.logprocessor.core.di.manual.AppModuleImpl
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.runBlocking
+import java.lang.Exception
 import javax.inject.Inject
 import javax.inject.Named
 
@@ -35,14 +38,27 @@ class LogProcessor(
             )
         }
 
-        fun d(message: String): String = with(getInstance()) {
+        suspend fun d(message: String): String = with(getInstance()) {
             Log.d("LOG_PROCESSOR", message)
             return getMessageTest()
         }
+
+        fun Composable.d(message: String) {
+
+        }
     }
 
-    private fun getMessageTest(): String = runBlocking {
-        getInstance().module.configurationManager.getTest()
+    private suspend fun getMessageTest(): String {
+        return getInstance().module.configurationManager.getTest()
+    }
+
+    private suspend fun test() = coroutineScope {
+        try {
+            LogProcessor.d("")
+
+        } catch (e: Exception) {
+            LogProcessor.d("")
+        }
     }
 
 

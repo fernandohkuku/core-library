@@ -19,14 +19,3 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
-
-# Moshi
--keep class com.squareup.moshi.Moshi { *; }
--keep class com.squareup.moshi.** { *; }
--keepclassmembers class com.squareup.moshi.** { *; }
--keepnames class com.squareup.moshi.** { *; }
--dontwarn com.squareup.moshi.**
-
-# Kotlin Reflection
--keep class kotlin.reflect.** { *; }
--keep class kotlin.Metadata { *; }
