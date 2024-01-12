@@ -18,6 +18,7 @@ class LogProcessor(
 ) {
 
     companion object {
+        @get:JvmSynthetic
         @Volatile
         private var instance: LogProcessor? = null
 
@@ -25,6 +26,7 @@ class LogProcessor(
             if (instance == null) {
                 synchronized(this) {
                     if (instance == null) {
+                        HDPLog.plant(HDPLog.DebugTree())
                         val module = AppModuleImpl(context)
                         instance = LogProcessor(module)
                     }
@@ -38,28 +40,14 @@ class LogProcessor(
             )
         }
 
-        suspend fun d(message: String): String = with(getInstance()) {
-            Log.d("LOG_PROCESSOR", message)
-            return getMessageTest()
+        fun d(message: String) {
+            HDPLog.d(message)
         }
 
-        fun Composable.d(message: String) {
-
-        }
     }
 
     private suspend fun getMessageTest(): String {
         return getInstance().module.configurationManager.getTest()
     }
-
-    private suspend fun test() = coroutineScope {
-        try {
-            LogProcessor.d("")
-
-        } catch (e: Exception) {
-            LogProcessor.d("")
-        }
-    }
-
 
 }

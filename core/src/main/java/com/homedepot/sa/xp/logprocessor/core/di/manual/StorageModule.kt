@@ -8,11 +8,13 @@ import java.io.File
 
 class StorageModule {
 
-    val platformConfigurationFile: File by lazy {
+    @get:JvmSynthetic
+    internal val platformConfigurationFile: File by lazy {
         File(Environment.getExternalStorageDirectory(), LAUNCHER_FILE)
     }
 
-    val logProcessorConfigurationFile: File by lazy {
+    @get:JvmSynthetic
+    internal val logProcessorConfigurationFile: File by lazy {
         File(
             Environment.getExternalStorageDirectory(),
             ConfigurationLocalDataSourceImpl.LOG_PROCESSOR_FILE

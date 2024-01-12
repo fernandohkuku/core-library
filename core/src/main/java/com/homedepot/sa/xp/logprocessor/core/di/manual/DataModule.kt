@@ -10,6 +10,7 @@ internal class DataModule(
     private val configurationRemoteDataSource: ConfigurationRemoteDataSource
 ) {
 
+    @get:JvmSynthetic
     internal val configurationManager: ConfigurationRepository by lazy {
         ConfigurationRepositoryImpl(
             localDataSource = configurationLocalDataSource,

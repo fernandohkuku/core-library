@@ -15,6 +15,7 @@ internal class LocalDataModule(
     private val platformConfigurationAdapter: JsonAdapter<PlatformConfigurationDto>
 ) {
 
+    @get:JvmSynthetic
     val configurationLocalDataSource by lazy {
         ConfigurationLocalDataSourceImpl(
             resources = resources,

@@ -17,10 +17,12 @@ class RemoteModule(
     private val context: Context
 ) {
 
+    @get:JvmSynthetic
     private val errorHandler: ErrorHandler by lazy {
         ApiErrorHandler()
     }
 
+    @get:JvmSynthetic
     private val interceptorError: Interceptor by lazy {
         Interceptor { chain ->
             val response = chain.proceed(chain.request())
@@ -29,7 +31,7 @@ class RemoteModule(
         }
     }
 
-
+    @get:JvmSynthetic
     private val interceptorInternetConnection: Interceptor by lazy {
         Interceptor { chain ->
             if (!context.isInternetAvailable()) {
@@ -39,14 +41,17 @@ class RemoteModule(
         }
     }
 
+    @get:JvmSynthetic
     val moshi: Moshi by lazy {
         Moshi.Builder().addLast(KotlinJsonAdapterFactory()).build()
     }
 
+    @get:JvmSynthetic
     private val moshiFactory: MoshiConverterFactory by lazy {
         MoshiConverterFactory.create(moshi)
     }
 
+    @get:JvmSynthetic
     private val okHttpClientBuilder: OkHttpClient by lazy {
         OkHttpClient.Builder().apply {
             addInterceptor(interceptorError)
@@ -57,6 +62,7 @@ class RemoteModule(
         }.build()
     }
 
+    @get:JvmSynthetic
     private val retrofitBuilder: Retrofit.Builder by lazy {
         Retrofit.Builder()
             .addConverterFactory(moshiFactory)

@@ -10,14 +10,17 @@ class MoshiAdapterModule(
     private val moshi: Moshi
 ) {
 
+    @get:JvmSynthetic
     private val jsonAdapterFactory: JsonAdapterFactory by lazy {
         JsonAdapterFactoryImpl(moshi)
     }
 
+    @get:JvmSynthetic
     val platformConfigurationAdapter by lazy {
         jsonAdapterFactory.create(PlatformConfigurationDto::class.java)
     }
 
+    @get:JvmSynthetic
     val logProcessorConfigurationAdapter by lazy {
         jsonAdapterFactory.create(LogConfigurationDto::class.java)
     }
