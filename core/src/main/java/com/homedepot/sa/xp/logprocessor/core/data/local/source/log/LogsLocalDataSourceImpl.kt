@@ -34,11 +34,11 @@ class LogsLocalDataSourceImpl @Inject constructor(
         val json = logAdapter.toJson(body)
         // val ok = readDataFromMediaStore()
         val logDb = LogDb(id = 13, message = "Message Test", tag = "tag", error = "error")
-        logDao.insertLog(logDb)
+        //logDao.insertLog(logDb)
         val test = getAllLogs()
         val lolol = logDao.getLogs()
         val okoko = lolol.size
-       // insert(message)
+        insert(message)
         val ssss = okoko()
         val oks = get()
         // saveLog(json)
