@@ -28,7 +28,7 @@ android {
                 "proguard-rules.pro"
             )
         }
-        /*debug {
+        debug {
             isMinifyEnabled = false
             isShrinkResources = false
             isDebuggable = true
@@ -49,7 +49,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-        }*/
+        }
     }
 }
 

@@ -15,12 +15,12 @@
 
     <permission
         android:name="com.homedepot.sa.xp.logprocessor.permission.READ_PROVIDER"
-        android:description="read"
-        android:label="read" />
+        android:description="@string/permission_read_config_desc"
+        android:label="@string/permission_read_config_label" />
 
     <permission
         android:name="com.homedepot.sa.xp.logprocessor.permission.WRITE_PROVIDER"
-        android:description="write"
-        android:label="write" />
+        android:description="@string/permission_write_config_desc"
+        android:label="@string/permission_write_config_label" />
 
 </manifest>

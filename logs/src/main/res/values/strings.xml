@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permission_read_config_desc">This application will have access to read the custom platform configuration deployed to this device.</string>
+    <string name="permission_read_config_label">Read Platform Configuration</string>
+
+    <string name="permission_write_config_desc">This application will have access to read the custom platform configuration deployed to this device.</string>
+    <string name="permission_write_config_label">Read Platform Configuration</string>
+</resources>
