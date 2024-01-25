@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.lifecycleScope
+import com.homedepot.sa.xp.logprocessor.logs.presentation.log.LogProcessor
 import com.homedepot.sa.xp.logprocessor.presentation.ui.theme.FP_LogProcessorTheme
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -19,6 +20,7 @@ import kotlinx.coroutines.launch
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        LogProcessor.d("hola", "tests")
         setContent {
             FP_LogProcessorTheme {
 

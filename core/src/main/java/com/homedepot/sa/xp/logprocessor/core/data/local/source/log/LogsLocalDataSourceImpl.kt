@@ -34,7 +34,7 @@ class LogsLocalDataSourceImpl @Inject constructor(
         val json = logAdapter.toJson(body)
         // val ok = readDataFromMediaStore()
         val logDb = LogDb(id = 13, message = "Message Test", tag = "tag", error = "error")
-        // logDao.insertLog(logDb)
+        logDao.insertLog(logDb)
         val test = getAllLogs()
         val lolol = logDao.getLogs()
         val okoko = lolol.size
@@ -49,7 +49,8 @@ class LogsLocalDataSourceImpl @Inject constructor(
     }
 
     private fun insert(message: String) {
-        val content = "content://com.homedepot.sa.xp.logprocessor.logs.provider/logs".toUri()
+        val packageName = context.packageName
+        val content = "content://$packageName.logs.provider/logs".toUri()
         val values = ContentValues().apply {
             put("message", message)
         }
@@ -118,8 +119,10 @@ class LogsLocalDataSourceImpl @Inject constructor(
 
     private fun okoko(){
         val projection = arrayOf("message")
+        val packageName = context.packageName
+        val content = "content://$packageName.logs.provider/logs".toUri()
         val cursor: Cursor? = context.contentResolver.query(
-            "content://com.homedepot.sa.xp.logprocessor.logs.provider/logs".toUri(),
+            content,
             projection,
             null,
             null,

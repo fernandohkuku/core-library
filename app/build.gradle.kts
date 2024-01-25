@@ -22,13 +22,13 @@ android {
         val release by getting {
             isMinifyEnabled = true
             isShrinkResources = true
-            isDebuggable = false
+            isDebuggable = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
         }
-        debug {
+        /*debug {
             isMinifyEnabled = false
             isShrinkResources = false
             isDebuggable = true
@@ -42,20 +42,21 @@ android {
         create("qa") {
             isMinifyEnabled = true
             isShrinkResources = true
-            isDebuggable = false
+            isDebuggable = true
             applicationIdSuffix = ".qa"
             versionNameSuffix = "-qa"
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-        }
+        }*/
     }
 }
 
 dependencies {
     //Library core ktx
     implementation(projects.logs)
+    implementation(projects.core)
     //Library ui ktx
     implementation(projects.uiKtx)
     //System UI controller
