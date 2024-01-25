@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.com.android.application)
     alias(libs.plugins.org.jetbrains.kotlin.android)
     alias(libs.plugins.com.google.devtools.ksp)
-    alias(libs.plugins.com.google.dagger.hilt.android)
+    //alias(libs.plugins.com.google.dagger.hilt.android)
 }
 
 android {
@@ -55,7 +55,7 @@ android {
 
 dependencies {
     //Library core ktx
-    implementation(projects.core)
+    implementation(projects.logs)
     //Library ui ktx
     implementation(projects.uiKtx)
     //System UI controller
@@ -65,5 +65,5 @@ dependencies {
     //Event Logger
    // implementation("com.homedepot.sa.xp:event-logger:1.0.29@aar")
     //Dagger hilt compiler
-    ksp(libs.hilt.android.compiler)
+    //ksp(libs.hilt.android.compiler)
 }

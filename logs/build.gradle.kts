@@ -38,6 +38,8 @@ android {
 
 dependencies {
     implementation(projects.core)
+    implementation(libs.timber)
+    ksp(libs.androidx.room.compiler)
 }
 
 afterEvaluate {
@@ -48,7 +50,6 @@ afterEvaluate {
                 groupId = "com.github.fernandohkuku"
                 artifactId = "log-processor"
                 version = "1.0"
-
             }
         }
     }

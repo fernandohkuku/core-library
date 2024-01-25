@@ -11,4 +11,7 @@ class PresentationModule(
         context.resources
     }
 
+    val packageName: String by lazy {
+        context.packageName
+    }
 }

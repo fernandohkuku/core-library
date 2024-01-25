@@ -47,8 +47,8 @@ ext-junit = "1.1.5"
 espresso-core = "3.5.1"
 appcompat = "1.6.1"
 material = "1.11.0"
-
-
+timber = "5.0.1"
+work-runtime-ktx = "2.9.0"
 
 [libraries]
 #Android Core
@@ -98,6 +98,8 @@ androidx-compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
 androidx-compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
+androidx-work-runtime-ktx = { module = "androidx.work:work-runtime-ktx", version.ref = "work-runtime-ktx" }
 
 [bundles]
 compose = [

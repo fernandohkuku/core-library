@@ -1,7 +1,7 @@
 package com.homedepot.sa.xp.logprocessor.core.di.manual
 
 import com.homedepot.sa.xp.logprocessor.core.data.remote.api.configurator.ConfiguratorService
-import com.homedepot.sa.xp.logprocessor.core.data.remote.source.ConfigurationRemoteDataSourceImpl
+import com.homedepot.sa.xp.logprocessor.core.data.remote.source.configuration.ConfigurationRemoteDataSourceImpl
 import com.homedepot.sa.xp.logprocessor.core.data.repositories.ConfigurationRemoteDataSource
 import retrofit2.Retrofit
 

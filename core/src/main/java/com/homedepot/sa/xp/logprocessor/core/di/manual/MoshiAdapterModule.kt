@@ -2,6 +2,7 @@ package com.homedepot.sa.xp.logprocessor.core.di.manual
 
 import com.homedepot.sa.xp.logprocessor.core.data.models.dtos.configuration.LogConfigurationDto
 import com.homedepot.sa.xp.logprocessor.core.data.models.dtos.configuration.PlatformConfigurationDto
+import com.homedepot.sa.xp.logprocessor.core.data.models.dtos.log.LogDto
 import com.homedepot.sa.xp.logprocessor.core.infrastructure.moshi.JsonAdapterFactory
 import com.homedepot.sa.xp.logprocessor.core.infrastructure.moshi.JsonAdapterFactoryImpl
 import com.squareup.moshi.Moshi
@@ -23,6 +24,11 @@ class MoshiAdapterModule(
     @get:JvmSynthetic
     val logProcessorConfigurationAdapter by lazy {
         jsonAdapterFactory.create(LogConfigurationDto::class.java)
+    }
+
+    @get:JvmSynthetic
+    val logAdapter by lazy {
+        jsonAdapterFactory.create(LogDto::class.java)
     }
 
 }

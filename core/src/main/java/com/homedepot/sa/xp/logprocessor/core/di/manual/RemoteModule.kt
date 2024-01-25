@@ -70,7 +70,7 @@ class RemoteModule(
             .client(okHttpClientBuilder)
     }
 
-
+    @get:JvmSynthetic
     val retrofit: Retrofit by lazy {
         retrofitBuilder.build()
     }
