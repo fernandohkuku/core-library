@@ -38,7 +38,7 @@ class LogsLocalDataSourceImpl @Inject constructor(
         val test = getAllLogs()
         val lolol = logDao.getLogs()
         val okoko = lolol.size
-        insert(message)
+       // insert(message)
         val ssss = okoko()
         val oks = get()
         // saveLog(json)

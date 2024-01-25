@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="com.homedepot.sa.xp.logprocessor.permission.READ_PROVIDER" />
+    <uses-permission android:name="com.homedepot.sa.xp.logprocessor.permission.WRITE_PROVIDER" />
+
     <application
         android:name=".common.LogProcessorApp"
         android:allowBackup="true"
@@ -24,18 +27,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <provider
-            android:name=".core.infrastructure.providers.LogContentProvider"
-            android:authorities="com.homedepot.sa.xp.logprocessor.logs.provider"
-            android:exported="true"
-            tools:ignore="ExportedContentProvider" />
-
-        <provider
-            android:name=".core.infrastructure.providers.LogContentProvider"
-            android:authorities="com.homedepot.sa.xp.testlibrary.logs.provider"
-            android:exported="true"
-            tools:ignore="ExportedContentProvider" />
     </application>
 
 </manifest>
