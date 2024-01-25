@@ -14,22 +14,22 @@ interface AppModule {
 class AppModuleImpl(
     private val context: Context
 ) : AppModule {
-
-
+    @get:JvmSynthetic
     private val dispatcherModule by lazy {
         DispatcherModule()
     }
 
-
+    @get:JvmSynthetic
     private val dataBaseModule by lazy {
         DataBaseModule(context)
     }
 
-
+    @get:JvmSynthetic
     private val remoteModule by lazy {
         RemoteModule(context)
     }
 
+    @get:JvmSynthetic
     private val storageModule by lazy { StorageModule() }
 
     @get:JvmSynthetic
@@ -55,7 +55,8 @@ class AppModuleImpl(
             logProcessorConfigurationAdapter = moshiAdapterModule.logProcessorConfigurationAdapter,
             platformConfigurationAdapter = moshiAdapterModule.platformConfigurationAdapter,
             logAdapter = moshiAdapterModule.logAdapter,
-            logDao = dataBaseModule.logDao
+            logDao = dataBaseModule.logDao,
+            logContent = presentationModule.uriLogContent
         )
     }
 
@@ -84,6 +85,4 @@ class AppModuleImpl(
     override val sendLogsUseCase: SendLogsUseCase by lazy {
         domainModule.sendLogsUseCase
     }
-
-
 }

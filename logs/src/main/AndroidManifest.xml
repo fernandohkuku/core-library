@@ -2,25 +2,4 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <application>
-        <provider
-            android:name="com.homedepot.sa.xp.logprocessor.core.infrastructure.providers.LogContentProvider"
-            android:authorities="com.homedepot.sa.xp.logprocessor.logs.provider"
-            android:exported="true"
-            tools:ignore="ExportedContentProvider"
-            android:readPermission="com.homedepot.sa.xp.logprocessor.permission.READ_PROVIDER"
-            android:writePermission="com.homedepot.sa.xp.logprocessor.permission.WRITE_PROVIDER">
-        </provider>
-    </application>
-
-    <permission
-        android:name="com.homedepot.sa.xp.logprocessor.permission.READ_PROVIDER"
-        android:description="@string/permission_read_config_desc"
-        android:label="@string/permission_read_config_label" />
-
-    <permission
-        android:name="com.homedepot.sa.xp.logprocessor.permission.WRITE_PROVIDER"
-        android:description="@string/permission_write_config_desc"
-        android:label="@string/permission_write_config_label" />
-
 </manifest>

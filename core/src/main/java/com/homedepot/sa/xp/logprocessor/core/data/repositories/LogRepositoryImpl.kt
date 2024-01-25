@@ -9,8 +9,8 @@ internal class LogRepositoryImpl @Inject constructor(
     private val localDataSource: LogLocalDataSource
 ) : LogRepository {
     override suspend fun saveLog(params: SaveLogUseCase.Params) {
-        val (level, message, tag) = params
-        localDataSource.saveLog(level, message, tag)
+        val (level, message, tag, throwable) = params
+        localDataSource.saveLog(level, message, tag, throwable?.message)
     }
 
     override suspend fun sendLogs() {
@@ -19,6 +19,6 @@ internal class LogRepositoryImpl @Inject constructor(
 
 
 internal interface LogLocalDataSource {
-    suspend fun saveLog(level: Int, message: String, tag: String)
+    suspend fun saveLog(level: Int, message: String, tag: String, error: String?)
     suspend fun getLogs(): List<LogDto>
 }

@@ -2,6 +2,7 @@ package com.homedepot.sa.xp.logprocessor.core.di.manual
 
 import android.content.Context
 import android.content.res.Resources
+import android.net.Uri
 import com.homedepot.sa.xp.logprocessor.core.data.local.database.dao.LogDao
 import com.homedepot.sa.xp.logprocessor.core.data.local.source.configuration.ConfigurationLocalDataSourceImpl
 import com.homedepot.sa.xp.logprocessor.core.data.local.source.log.LogsLocalDataSourceImpl
@@ -14,6 +15,7 @@ import java.io.File
 internal class LocalDataModule(
     private val context: Context,
     private val resources: Resources,
+    private val logContent: Uri,
     private val platformConfigFile: File,
     private val logProcessorFile: File,
     private val logProcessorConfigurationAdapter: JsonAdapter<LogConfigurationDto>,
@@ -38,7 +40,8 @@ internal class LocalDataModule(
         LogsLocalDataSourceImpl(
             context = context,
             logAdapter = logAdapter,
-            logDao = logDao
+            logDao = logDao,
+            logContent = logContent
         )
     }
 }
